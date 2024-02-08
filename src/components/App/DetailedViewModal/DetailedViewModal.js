@@ -9,7 +9,7 @@ const Modal = ({ticket, toggleModal}) => {
     ["Created:",ticket.created_at],["Updated:",ticket.updated_at],
     ["Priority",ticket.priority],["Recipient:",ticket.recipient],
     ["Due At:", ticket.due_at]]
-
+ 
   for(let i = 0; i < modalDivs.length; i++){
     if(!modalDivs[i][1]){
       modalDivs[i][1]="N/A"
@@ -18,7 +18,7 @@ const Modal = ({ticket, toggleModal}) => {
 
   console.log(modalDivs)
   return (
-    <div>
+    <modal className="modal">
       <button onClick={() => toggleModal()}>X</button>
       {modalDivs.map(modalDiv => (
         <div>
@@ -26,7 +26,7 @@ const Modal = ({ticket, toggleModal}) => {
           <p>{modalDiv[1]}</p>
         </div>
       ))}
-    </div>
+    </modal>
   )
 }
 
